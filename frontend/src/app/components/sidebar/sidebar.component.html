@@ -1,0 +1,39 @@
+<aside class="sidebar-container">
+  <div class="brand-section">
+    <div class="logo">IT</div>
+    <span class="brand-name">Issue Tracker</span>
+  </div>
+
+  <div class="user-profile">
+    <div class="avatar">DA</div>
+    <div class="user-info">
+      <p class="name">Daniel Apaza</p>
+      <p class="role">Desarrollador</p>
+    </div>
+  </div>
+
+  <nav class="nav-menu">
+    <div class="nav-item active">
+      <span class="icon">📊</span>
+      <a routerLink="/dashboard">Dashboard</a>
+    </div>
+    <div class="nav-item">
+      <span class="icon">📁</span>
+      <a routerLink="/proyectos">Mis Proyectos</a>
+    </div>
+    <div class="nav-item">
+      <span class="icon">🎟️</span>
+      <a routerLink="/tickets">Mis Tickets</a>
+    </div>
+    <div class="nav-item">
+      <span class="icon">⚙️</span>
+      <a routerLink="/configuracion">Configuración</a>
+    </div>
+  </nav>
+
+  <div class="sidebar-footer">
+    <button class="logout-btn" (click)="onLogout()">
+      <span class="icon">🚪</span> Cerrar Sesión
+    </button>
+  </div>
+</aside>

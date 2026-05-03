@@ -1,0 +1,125 @@
+.sidebar-container {
+  width: 260px;
+  height: 100vh;
+  background-color: #0747a6; /* Azul corporativo estilo Atlassian */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Logo / Marca */
+.brand-section {
+  padding: 0 20px 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  background: white;
+  color: #0747a6;
+  font-weight: 900;
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+
+.brand-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Perfil de Usuario */
+.user-profile {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #ff5630; /* Color vibrante para el avatar */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.user-info .name {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.user-info .role {
+  font-size: 12px;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Menú de Navegación */
+.nav-menu {
+  flex-grow: 1;
+}
+
+.nav-item {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+  background: rgba(255, 255, 255, 0.2);
+  border-left: 4px solid #ffffff;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Footer y Logout */
+.sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logout-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #de350b; /* Color de error/alerta para logout */
+  border-color: #de350b;
+}

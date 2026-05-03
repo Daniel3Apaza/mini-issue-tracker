@@ -1,0 +1,21 @@
+<div class="register-container">
+  <div class="register-box">
+    <h2>Crear Cuenta</h2>
+    <div class="field">
+      <label>Nombre Completo</label>
+      <input type="text" [(ngModel)]="nuevoUsuario.nombre" placeholder="Ej. Daniel Apaza">
+    </div>
+    <div class="field">
+      <label>Email</label>
+      <input type="email" [(ngModel)]="nuevoUsuario.email" placeholder="correo@ejemplo.com">
+    </div>
+    <div class="field">
+      <label>Contraseña</label>
+      <input type="password" [(ngModel)]="nuevoUsuario.contrasena" placeholder="Mínimo 6 caracteres">
+    </div>
+    <button class="btn-register" (click)="onRegistrar()">Registrarme</button>
+    <p class="footer-text">
+      ¿Ya tienes cuenta? <a routerLink="/login" class="link">Inicia sesión</a>
+    </p>
+  </div>
+</div>

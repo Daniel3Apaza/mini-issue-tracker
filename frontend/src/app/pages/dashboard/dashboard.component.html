@@ -1,0 +1,57 @@
+<div class="dashboard-wrapper">
+  <app-sidebar></app-sidebar>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <h1>Panel de Proyectos</h1>
+      <button class="btn-add">+ Nuevo Proyecto</button>
+    </header>
+
+    <!-- Lista de Proyectos en Grid -->
+    <section class="projects-grid" *ngIf="!proyectoSeleccionado">
+      <div class="project-card" *ngFor="let p of proyectos" (click)="seleccionarProyecto(p.id)">
+        <h3>{{ p.nombre }}</h3>
+        <p>{{ p.descripcion }}</p>
+        <span class="date">Creado: {{ p.fecha_creacion | date }}</span>
+      </div>
+    </section>
+
+    <!-- Tablero Kanban del Proyecto Seleccionado -->
+    <section class="kanban-board" *ngIf="proyectoSeleccionado">
+      <button (click)="proyectoSeleccionado = null">← Volver a Proyectos</button>
+      <h2>{{ proyectoSeleccionado.nombre }}</h2>
+
+      <div class="board-columns">
+        <!-- Columna Pendientes (Estado 1) -->
+        <div class="column">
+          <h4>Pendientes</h4>
+          <div class="ticket" *ngFor="let t of pendientes">
+            <h5>{{ t.titulo }}</h5>
+            <button (click)="cambiarEstado(t.id, 2)">Iniciar →</button>
+          </div>
+        </div>
+
+        <!-- Columna En Progreso (Estado 2) -->
+        <div class="column">
+          <h4>En Progreso</h4>
+          <div class="ticket highlight" *ngFor="let t of enProgreso">
+            <h5>{{ t.titulo }}</h5>
+            <div class="actions">
+              <button (click)="cambiarEstado(t.id, 1)">←</button>
+              <button (click)="cambiarEstado(t.id, 3)">Finalizar →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Completados (Estado 3) -->
+        <div class="column">
+          <h4>Completados</h4>
+          <div class="ticket done" *ngFor="let t of completados">
+            <h5>{{ t.titulo }}</h5>
+            <span>✅</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
